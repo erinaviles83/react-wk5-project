@@ -1,13 +1,57 @@
-body {
+li {
+  list-style: none;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  color: black;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 32px;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.weather-temperature img {
+  margin-right: 5px;
+  height: 100px;
+  width: 100px;
+}
+
+.weather-temperature strong {
+  color: black;
+  font-size: 60px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -30px;
+}
+
+.weather-forecast {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: rgb(135, 125, 125);
+}
+
+.weather-forecast-temperature {
+  font-size: 14px;
+}
+
+.container {
+  padding: 20px 10px;
+  margin: 5px 5px;
+  max-width: 600px;
+  border-radius: 15px;
+  background: linear-gradient(
+    359.3deg,
+    rgb(196, 214, 252) 1%,
+    rgba(187, 187, 187, 0) 70.9%
+  );
 }
