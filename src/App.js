@@ -14,6 +14,7 @@ export default function Weather() {
   };
 
   return (
+    <div className="container">
     <div className="Weather">
       <form className="mb-3">
         <div className="row">
@@ -65,5 +66,7 @@ export default function Weather() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
