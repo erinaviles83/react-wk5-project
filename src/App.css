@@ -1,20 +1,10 @@
-body {
+ .App {
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  h1,
-  p,
-  h2,
-  h3 {
-    text-align: center;
-  }
-  h1 {
-    font-size: 60px;
-    margin: 25px 25px 10px 50px;
-  }
+
   
-  ul {
-    text-align: center;
-    list-style: none;
+  .App footer {
+    font-size: 13px;
+    margin: 15px 0;
   }
-  
