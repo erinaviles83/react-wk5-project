@@ -1,23 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import App from "./App";
 import "./Weather.css"; 
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
-export default function Weather (){
-    function weatherData(response) {
-        console.log(response.data); 
+export default function Weather (props){
+  const [weatherData, setWeatherData] = useState({ ready: false }); 
+  const [city, setCity] = useState(props.defaultCity); 
+
+    function handleResponse(response) {
+      setWeatherData({
+        ready: true,
+        coordinates: response.data.coord, 
+        temperature: response.data.main.temp, 
+        humidity: response.data.main.humidity, 
+        date: new Date(response.data.dt * 1000), 
+        description: response.data.weather[0].description, 
+        icon: response.data.weather[0].icon, 
+        wind: response.data.wind.speed, 
+        city: response.data.name,
+      }); 
     }
 
+    function handleSubmit(event) {
+      event.preventDefault(); 
+      search(); 
+    }
 
+    function handleCityChange(event) {
+      setCity(event.target.value); 
+    }
 
+    function search() {
+      const apiKey = "116390a0e4a4a5a1b58dd99c1f83f002"; 
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`; 
+      axios.get(apiUrl).then(weatherData); 
 
-    const apiKey = "5354b60afda2b7800186c06153932396"; 
-    let city = "Tampa"; 
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`; 
-    axios.get(apiUrl).then(weatherData); 
+    }
+
+    if (weatherData.ready) {
     return (
+      <div className = "Weather">
       <div className="container">
-        <form className="mb-3">
+        <form className="mb-3" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -40,7 +65,9 @@ export default function Weather (){
         <div className="overview">
           <h1>{weatherData.city}</h1>
           <ul>
-            <li>Last updated: {weatherData.date}</li>
+            <li>
+              <FormattedDate date={weatherData.date} />
+            </li>
             <li>{weatherData.description}</li>
           </ul>
         </div>
@@ -68,14 +95,11 @@ export default function Weather (){
           </div>
       </div>
       </div>
+      </div>
     );
   }
+}
 
-    // city: "Tampa",
- // temperature: 65,
-  //date: "Thursday 9:30",
-  //description: "Clear",
+
   //imgUrl:
    // "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png",
-  //humidity: 60,
-  //wind: 20
