@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import App from "./App";
 import "./Weather.css"; 
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather (props){
   const [weatherData, setWeatherData] = useState({ ready: false }); 
@@ -41,7 +41,6 @@ export default function Weather (props){
     if (weatherData.ready) {
     return (
       <div className = "Weather">
-      <div className="container">
         <form className="mb-3" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
@@ -51,6 +50,7 @@ export default function Weather (props){
                 className="form-control"
                 autoComplete="off"
                 autoFocus="on"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -61,45 +61,13 @@ export default function Weather (props){
               />
             </div>
           </div>
+          
         </form>
-        <div className="overview">
-          <h1>{weatherData.city}</h1>
-          <ul>
-            <li>
-              <FormattedDate date={weatherData.date} />
-            </li>
-            <li>{weatherData.description}</li>
-          </ul>
+        <WeatherInfo data={weatherData} />
         </div>
-        <div className="row">
-          <div className="col-6">
-            <div className="clearfix weather-temperature">
-              <img
-                src={weatherData.imgUrl}
-                alt={weatherData.description}
-                className="float-left"
-              />
-              <div className="float-left">
-                <strong>{weatherData.temperature}</strong>
-                <span className="units">
-                  <a href="/">°C</a> | <a href="/">°F</a>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} km/h</li>
-            </ul>
-          </div>
-      </div>
-      </div>
-      </div>
-    );
-  }
+        ); 
 }
-
+}
 
   //imgUrl:
    // "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png",
