@@ -18,7 +18,7 @@ export default function App() {
     </div>
     </div>
     <footer>
-              This project was coded by Erin Aviles and is {" "} <a href="https://github.com/erinaviles83/react-wk5-project" target="_blank"> open-sourced on GitHub ☀️</a>
+              This project was coded by Erin Aviles and is {" "} <a href="https://github.com/erinaviles83/react-wk5-project"> open-sourced on GitHub ☀️</a>
             </footer>
     </div>
     </div>
