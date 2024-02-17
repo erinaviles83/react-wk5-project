@@ -1,5 +1,4 @@
  .App {
-    font-family: Arial, Helvetica, sans-serif;
     max-width: 600px;
     margin: 30px auto;
   }
@@ -7,16 +6,4 @@
   .App footer {
     font-size: 13px;
     margin: 15px 0;
-  }
-
-  .container {
-    padding: 20px 10px;
-    margin: 5px 5px;
-    max-width: 600px;
-    border-radius: 15px;
-    background: linear-gradient(
-      359.3deg,
-      rgb(196, 214, 252) 1%,
-      rgba(187, 187, 187, 0) 70.9%
-    );
   }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import App from "./App";
 import "./Weather.css"; 
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
@@ -33,15 +32,16 @@ export default function Weather (props){
 
     function search() {
       const apiKey = "116390a0e4a4a5a1b58dd99c1f83f002"; 
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`; 
-      axios.get(apiUrl).then(weatherData); 
-
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`; 
+      axios.get(apiUrl).then(handleResponse); 
     }
 
+    
     if (weatherData.ready) {
     return (
       <div className = "Weather">
-        <form className="mb-3" onSubmit={handleSubmit}>
+      
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -61,10 +61,10 @@ export default function Weather (props){
               />
             </div>
           </div>
-          
         </form>
         <WeatherInfo data={weatherData} />
         </div>
+      
         ); 
 }
 }
