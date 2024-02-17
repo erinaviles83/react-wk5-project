@@ -3,6 +3,7 @@ import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 
 
+
 export default function WeatherInfo(props) {
     return (
         <div className="WeatherInfo">
@@ -18,11 +19,11 @@ export default function WeatherInfo(props) {
         <div className="row">
                 <div className="col-6">
                     <div className="d-flex">
-
                     </div>
                     <div>
-                        <WeatherTemperature/> 
+                        <WeatherTemperature celsius={props.data.temperature} />
                     </div>
+               
                 </div>
                 <div className="col-6">
                     <ul>
