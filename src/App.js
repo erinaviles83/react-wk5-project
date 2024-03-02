@@ -14,7 +14,7 @@ export default function App() {
         <Weather defaultCity="Tampa" />
     
     <footer>
-              This project was coded by Erin Aviles and is {" "} <a href="https://github.com/erinaviles83/react-wk5-project"> open-sourced on GitHub ☀️</a>
+              This project was coded by Erin Aviles and is {" "} <a href="https://github.com/erinaviles83/react-wk5-project" target="_blank" rel="noopener noreferrer"> open-sourced on GitHub ☀️</a>
             </footer>
     </div>
     </div>

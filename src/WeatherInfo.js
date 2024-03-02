@@ -21,7 +21,7 @@ export default function WeatherInfo(props) {
                     <div className="d-flex">
                     </div>
                     <div>
-                        <WeatherTemperature celsius={props.data.temperature} />
+                        <WeatherTemperature imperial={props.data.temperature} />
                     </div>
                
                 </div>
