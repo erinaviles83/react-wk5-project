@@ -1,7 +1,7 @@
 .container {
   font-family: Arial, Helvetica, sans-serif;
   padding: 30px 20px;
-  margin: 5px 5px;
+  margin: 60px 5px 20px 5px;
   max-width: 600px;
   border-radius: 15px;
   background: linear-gradient(
@@ -12,26 +12,40 @@
 }
 
 .Weather h1 {
-  font-size: 75px;
+  font-size: 60px;
   text-align: center;
-  margin: 25px 25px 10px 50px;
-}
-
-.Weather ul {
-  text-align: center;
-  list-style: none;
+  margin: 25px; 
 }
 
 .Weather li {
     list-style: none;
-    margin: 0;
+    margin: 10px 45px;
     padding: 0;
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 100;
-    line-height: 32px;
+    line-height: 30px;
+    text-align: left;
   }
+
 .Weather li:first-letter {
     text-transform: capitalize;
   }
   
+  .Weather .temperature {
+    font-weight: bold;
+    color: rgb(33, 33, 33);
+    font-size: 50px;
+    line-height: 64px;
+    font-weight: 400;
+    margin-left: 250px;
+  }
+
+  .Weather .unit {
+    color: rgb(33, 33, 33);
+    font-size: 18px;
+    font-weight: 350;
+    position: relative;
+    line-height: 3;
+    top: -23px;
+  }
